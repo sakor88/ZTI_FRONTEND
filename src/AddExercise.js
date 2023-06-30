@@ -8,7 +8,7 @@ const AddExercise = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        await axios.post('http://localhost:8080/api/exercises/', exercise);
+        await axios.post('https://zti-backend-cl96.onrender.com/api/exercises/', exercise);
         fetchExercises();
     };
 

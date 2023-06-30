@@ -5,10 +5,8 @@ const CompletionPercentage = () => {
     const { trainingSessions } = useContext(WorkoutContext);
     const totalSessions = trainingSessions.length;
 
-    // Filter the trainingSessions array to get only the sessions that are completed
     const completedSessions = trainingSessions.filter(session => session.completed).length;
 
-    // Calculate the percentage of sessions completed
     const completionPercentage = totalSessions ? (completedSessions / totalSessions) * 100 : 0;
 
     return (

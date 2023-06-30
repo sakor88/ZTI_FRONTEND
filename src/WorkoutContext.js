@@ -8,24 +8,24 @@ export const WorkoutProvider = (props) => {
     const [trainingSessions, setTrainingSessions] = useState([]);
 
     const fetchExercises = useCallback(async () => {
-        const res = await axios.get('http://localhost:8080/api/exercises/');
+        const res = await axios.get('https://zti-backend-cl96.onrender.com/api/exercises/');
         setExercises(res.data);
     }, []);
 
     const fetchTrainingSessions = useCallback(async () => {
-        const res = await axios.get('http://localhost:8080/api/trainingsessions/');
+        const res = await axios.get('https://zti-backend-cl96.onrender.com/api/trainingsessions/');
         setTrainingSessions(res.data);
     }, []);
 
     const addExercise = async (exercise) => {
-        const res = await axios.post('http://localhost:8080/api/exercises/', exercise);
+        const res = await axios.post('https://zti-backend-cl96.onrender.com/api/exercises/', exercise);
         if (res.data) {
             fetchExercises();
         }
     };
 
     const addTrainingSession = async (trainingSession) => {
-        const res = await axios.post('http://localhost:8080/api/trainingsessions/', trainingSession);
+        const res = await axios.post('https://zti-backend-cl96.onrender.com/api/trainingsessions/', trainingSession);
         if (res.data) {
             fetchTrainingSessions();
         }

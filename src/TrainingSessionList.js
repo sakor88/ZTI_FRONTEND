@@ -11,7 +11,7 @@ const TrainingSessionList = () => {
 
     const handleTrainingCompletion = async (trainingId) => {
         try {
-            await axios.post(`http://localhost:8080/api/trainingsessions/${trainingId}/complete`);
+            await axios.post(`https://zti-backend-cl96.onrender.com/api/trainingsessions/${trainingId}/complete`);
             fetchTrainingSessions();
         } catch (error) {
             console.log(error);
