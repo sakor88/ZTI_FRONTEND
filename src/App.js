@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import ExercisesList from './ExercisesList';
+import AddExercise from './AddExercise';
+import TrainingSessionList from './TrainingSessionList';
+import AddTrainingSession from './AddTrainingSession';
+import { WorkoutProvider } from './WorkoutContext';
+import CompletionPercentage from "./CompletionPercentage";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <WorkoutProvider>
+            <div className="App">
+                <ExercisesList />
+                <AddExercise />
+                <TrainingSessionList />
+                <CompletionPercentage/>
+                <AddTrainingSession />
+            </div>
+        </WorkoutProvider>
+    );
 }
 
 export default App;
